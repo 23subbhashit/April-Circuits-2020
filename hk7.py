@@ -1,3 +1,13 @@
+'''
+# Sample code to perform I/O:
+
+name = input()                  # Reading input from STDIN
+print('Hi, %s.' % name)         # Writing output to STDOUT
+
+# Warning: Printing unwanted or ill-formatted data to output will cause the test cases to fail
+'''
+
+# Write your code here
 def right(a,b):
     r=a
     for i in range(b):
@@ -19,12 +29,10 @@ for i in range(int(input())):
     a=int(a)
     b=int(b)
     a=bin(a)
-    print(a)
     a=a[2:]
     a=str(a)
-    if len(a)%4!=0:
-        a="0"*(4-len(a)%4)+a
-    print(a)
+    if (16-len(a))!=0:
+        a="0"*(16-len(a))+a
     a=list(a)
     if c=='L':
         res=left(a,b)
@@ -35,3 +43,5 @@ for i in range(int(input())):
         res=right(a,b)
         res=btod(res)
         print(res)
+
+    
