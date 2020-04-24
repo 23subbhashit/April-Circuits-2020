@@ -14,4 +14,4 @@ for _ in range(t):
             v=sub[i+1:]
             right=u.count('B')+v.count('A')
             res=min(res,right)
-    print(res)
+        print(res)
