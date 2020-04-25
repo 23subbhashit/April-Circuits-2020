@@ -1,38 +1,29 @@
-def allah(x,l,b,c1):
-    res=999999999
-    c=0
-    i=0
-    a=list(b)
-    while ''.join(a)!=c1:
-        a[i]="A"
-        p=''.join(a)
-        for j in range(len(p)):
-            if j==x:
-                res=0
-                return res
-            else:
-                if p[j]!=x[j]:
-                    c=c+1
-                  
-        res=min(res,c)
-        c=0
-        if i<len(a):
-            i=i+1
+T = int(input())
+ 
+def calc(s):
+ 
+    num_a = num_b = 0
+    res = 0
+ 
+    for i in range(len(s)):
+        if s[i] == 'A':
+            num_a += 1
         else:
-            pass
-    return res
-t=int(input())
-for _ in range(t):
-    n=int(input())
-    sub=list(input())
-    l=[]
-    b="B"*len(sub)
-    c="A"*len(sub)
-    l.append(b)
-    if n==1:
-        print(0)
-    elif ''.join(sub)==b:
-        print(0)
-    else:
-        res1=allah(sub,l,b,c)
-        print(res1)
+            num_b += 1
+ 
+        if num_b == 0:
+            num_a = 0
+        else:
+            if num_a == num_b:
+                res += num_a
+                num_a = 0
+                num_b = 0
+ 
+    return res + num_a
+ 
+for _ in range(T):
+ 
+    N = int(input())
+    S = input()
+ 
+    print(calc(S))
